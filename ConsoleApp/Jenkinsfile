@@ -12,13 +12,13 @@ pipeline {
                checkout scm
             }
          }
-        stage('Restore'){
-           steps{
-            script {
-               sh "dotnet restore ConsoleApp/ConsoleApp.sln --configuration Release"
-              }
-            }
-         }
+        // stage('Restore'){
+        //    steps{
+        //     script {
+        //        sh "dotnet restore ConsoleApp/ConsoleApp.sln --configuration Release"
+        //       }
+        //     }
+        //  }
         stage('Build'){
            steps{
             script {
