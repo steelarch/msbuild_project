@@ -1,0 +1,15 @@
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\bin\Debug\net6.0\ConsoleApp.exe
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\bin\Debug\net6.0\ConsoleApp.deps.json
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\bin\Debug\net6.0\ConsoleApp.runtimeconfig.json
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\bin\Debug\net6.0\ConsoleApp.dll
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\bin\Debug\net6.0\ConsoleApp.pdb
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ConsoleApp.csproj.AssemblyReference.cache
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ConsoleApp.AssemblyInfoInputs.cache
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ConsoleApp.AssemblyInfo.cs
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ConsoleApp.csproj.CoreCompileInputs.cache
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ConsoleApp.dll
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\refint\ConsoleApp.dll
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ConsoleApp.pdb
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ConsoleApp.genruntimeconfig.cache
+C:\work\jenkins\msbuild_project\ConsoleApp\ConsoleApp\obj\Debug\net6.0\ref\ConsoleApp.dll
