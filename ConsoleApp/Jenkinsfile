@@ -15,20 +15,20 @@ pipeline {
         stage('Clean'){
            steps{
             script {
-               sh "dotnet clean /p:PackageVersion=${VERSION} ConsoleApp.sln --configuration Release"
+               sh "dotnet clean /p:PackageVersion=${VERSION} ConsoleApp/ConsoleApp.sln --configuration Release"
               }
             }
          }
         stage('Build'){
            steps{
             script {
-              sh "dotnet build /p:PackageVersion=${VERSION} ConsoleApp.sln --configuration Release --no-restore"
+              sh "dotnet build /p:PackageVersion=${VERSION} ConsoleApp/ConsoleApp.sln --configuration Release --no-restore"
               }
             }
          }
         stage('Test: Unit Test'){
            steps {
-                sh 'dotnet test UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore'
+                sh 'dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore'
              }
           }
     }
