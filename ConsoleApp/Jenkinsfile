@@ -12,10 +12,10 @@ pipeline {
                checkout scm
             }
          }
-        stage('Clean'){
+        stage('Restore'){
            steps{
             script {
-               sh "dotnet clean /p:PackageVersion=${VERSION} ConsoleApp/ConsoleApp.sln --configuration Release"
+               sh "dotnet restore /p:PackageVersion=${VERSION} ConsoleApp/ConsoleApp.sln --configuration Release"
               }
             }
          }
