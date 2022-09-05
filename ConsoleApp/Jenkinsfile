@@ -15,7 +15,7 @@ pipeline {
         stage('Restore'){
            steps{
             script {
-               sh "dotnet restore /p:PackageVersion=${VERSION} ConsoleApp/ConsoleApp.sln --configuration Release"
+               sh "dotnet restore ConsoleApp/ConsoleApp.sln --configuration Release"
               }
             }
          }
