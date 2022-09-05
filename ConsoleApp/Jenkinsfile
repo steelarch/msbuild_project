@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+      VERSION = "1.0.0"
+    }
     triggers {
         githubPush()
     }
@@ -11,12 +14,16 @@ pipeline {
          }
         stage('Clean'){
            steps{
-               sh 'dotnet clean ConsoleApp.sln --configuration Release'
+            script {
+               sh "dotnet clean /p:PackageVersion=${VERSION} ConsoleApp.sln --configuration Release"
+              }
             }
          }
         stage('Build'){
            steps{
-               sh 'dotnet build ConsoleApp.sln --configuration Release --no-restore'
+            script {
+              sh "dotnet build /p:PackageVersion=${VERSION} ConsoleApp.sln --configuration Release --no-restore"
+              }
             }
          }
         stage('Test: Unit Test'){
