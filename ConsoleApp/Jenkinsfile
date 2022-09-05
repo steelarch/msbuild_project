@@ -15,20 +15,20 @@ pipeline {
         stage('Restore'){
            steps{
             script {
-               sh "dotnet restore ConsoleApp/ConsoleApp.sln"
+               sh "sudo dotnet restore ConsoleApp/ConsoleApp.sln"
               }
             }
          }
         stage('Build'){
            steps{
             script {
-              sh "dotnet build /p:PackageVersion=${VERSION} ConsoleApp/ConsoleApp.sln --configuration Release --no-restore"
+              sh "sudo dotnet build /p:PackageVersion=${VERSION} ConsoleApp/ConsoleApp.sln --configuration Release --no-restore"
               }
             }
          }
         stage('Test: Unit Test'){
            steps {
-                sh 'dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore --logger "trx;LogFileName=/ConsoleApp/UnitTestProject/TestResults/UnitTests.trx"'
+                sh 'sudo dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore --logger "trx;LogFileName=/ConsoleApp/UnitTestProject/TestResults/UnitTests.trx"'
              }
           }
     }
