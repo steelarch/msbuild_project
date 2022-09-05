@@ -12,13 +12,13 @@ pipeline {
                checkout scm
             }
          }
-        // stage('Restore'){
-        //    steps{
-        //     script {
-        //        sh "dotnet restore ConsoleApp/ConsoleApp.sln --configuration Release"
-        //       }
-        //     }
-        //  }
+        stage('Restore'){
+           steps{
+            script {
+               sh "dotnet restore ConsoleApp/ConsoleApp.sln"
+              }
+            }
+         }
         stage('Build'){
            steps{
             script {
@@ -28,8 +28,13 @@ pipeline {
          }
         stage('Test: Unit Test'){
            steps {
-                sh 'dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore'
+                sh 'dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore --logger "trx;LogFileName=/ConsoleApp/UnitTestProject/TestResults/UnitTests.trx"'
              }
           }
+    post {
+        always {
+           xunit (testDataPublishers: [[$class: 'ClaimTestDataPublisher']], thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0')], tools: [[$class: 'JUnitType', pattern: '/ConsoleApp/UnitTestProject/TestResults/UnitTests.trx']])
+         }
+       }
     }
 }
