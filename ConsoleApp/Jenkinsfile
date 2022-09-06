@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    options {
+      allowBrokenBuildClaiming()
+    }
     environment {
       VERSION = "1.0.0"
     }
