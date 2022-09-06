@@ -31,13 +31,13 @@ pipeline {
          }
         stage('Test: Unit Test'){
            steps {
-                sh 'sudo dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore --logger "trx;LogFileName=./ConsoleApp/UnitTestProject/TestResults/UnitTests.trx"'
+                sh 'sudo dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore --logger "trx;LogFileName=ConsoleApp.trx"'
              }
           }
     }
     post {
         always {
-           xunit (testDataPublishers: [[$class: 'ClaimTestDataPublisher']], thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0')], tools: [[$class: 'JUnitType', pattern: 'ConsoleApp/UnitTestProject/TestResults/UnitTests.trx']])
+           xunit (testDataPublishers: [[$class: 'ClaimTestDataPublisher']], thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0')], tools: [[$class: 'JUnitType', pattern: './TestResults/*.trx"']])
          }
 
     }
