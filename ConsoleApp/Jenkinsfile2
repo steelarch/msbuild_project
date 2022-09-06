@@ -1,0 +1,35 @@
+pipeline {
+  // This pipeline requires the following plugins:
+  // * Git: https://plugins.jenkins.io/git/
+  // * Workflow Aggregator: https://plugins.jenkins.io/workflow-aggregator/
+  // * xUnit: https://plugins.jenkins.io/xunit/
+  // * Claim: https://plugins.jenkins.io/claim/
+  agent 'any'
+  options {
+    allowBrokenBuildClaiming()
+  }
+  stages {
+    stage('Checkout') {
+      steps {
+        script {
+            checkout([$class: 'GitSCM', branches: [[name: '*/failing-test']], userRemoteConfigs: [[url: 'https://github.com/OctopusSamples/RandomQuotes-Java.git']]])
+        }
+      }
+    }
+    stage('Test') {
+      steps {
+        sh(script: './mvnw --batch-mode -Dmaven.test.failure.ignore=true test')
+      }
+    }
+    stage('Package') {
+      steps {
+        sh(script: './mvnw --batch-mode package -DskipTests')
+      }
+    }
+  }
+  post {
+    always {
+      xunit (testDataPublishers: [[$class: 'ClaimTestDataPublisher']], thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0')], tools: [[$class: 'JUnitType', pattern: '**/surefire-reports/*.xml']])
+    }
+  }
+}
