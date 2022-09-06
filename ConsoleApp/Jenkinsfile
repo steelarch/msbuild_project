@@ -31,13 +31,18 @@ pipeline {
          }
         stage('Test: Unit Test'){
            steps {
-                sh 'sudo dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --configuration Release --no-restore --logger "trx;LogFileName=ConsoleApp.trx"'
+                sh 'sudo dotnet test ConsoleApp/UnitTestProject/UnitTestProject.csproj --collect:"XPlat Code Coverage" --configuration Release --no-restore --logger "trx;LogFileName=ConsoleApp.trx"'
              }
           }
     }
     post {
         always {
            xunit (testDataPublishers: [[$class: 'ClaimTestDataPublisher']], thresholds: [ skipped(failureThreshold: '0'), failed(failureThreshold: '0')], tools: [[$class: 'MSTestJunitHudsonTestType', pattern: 'ConsoleApp/UnitTestProject/TestResults/*.trx']])
+            publishCoverage (failUnhealthy: true, 
+               globalThresholds: [[thresholdTarget: 'Line', unhealthyThreshold: '0']],
+               adapters: [coberturaAdapter(
+                     mergeToOneReport: true, 
+                     path: "ConsoleApp/UnitTestProject/TestResults/*/*.cobertura.xml")])
          }
 
     }
