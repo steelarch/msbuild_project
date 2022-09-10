@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wTQRPEMqcvwqZMnvCOvD9JVoMO2Anpx7oDnxLvu1Xi6/VzZt9IONk9o0TNo4c0/TyWkok7mUetB7/dEDWSUueA==",
+  "dgSpecHash": "6HiZehpY01DaaF1/klzvGsA6V0FwV5PR/m/dbXfTOtTBRbl+EWHJiIi58dTvqlymyc/cHZtwSoBjTInFvZTkPA==",
   "success": true,
   "projectFilePath": "C:\\work\\jenkins\\msbuild_project\\ConsoleApp\\UnitTestProject\\UnitTestProject.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\mucahit.celikyay\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\mucahit.celikyay\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.1.0\\microsoft.testplatform.objectmodel.17.1.0.nupkg.sha512",
     "C:\\Users\\mucahit.celikyay\\.nuget\\packages\\microsoft.testplatform.testhost\\17.1.0\\microsoft.testplatform.testhost.17.1.0.nupkg.sha512",
+    "C:\\Users\\mucahit.celikyay\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.15.1\\microsoft.visualstudio.azure.containers.tools.targets.1.15.1.nupkg.sha512",
     "C:\\Users\\mucahit.celikyay\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\mucahit.celikyay\\.nuget\\packages\\mstest.testadapter\\2.2.8\\mstest.testadapter.2.2.8.nupkg.sha512",
     "C:\\Users\\mucahit.celikyay\\.nuget\\packages\\mstest.testframework\\2.2.8\\mstest.testframework.2.2.8.nupkg.sha512",

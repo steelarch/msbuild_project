@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "WmZF7HfE5YF/Xdj+eid0oiJ9UsmofGmd9BAXilEQNc3z3UOgNV2NRo4aES6m+qdyHL3jhgxVTFHo28KA+2PmLA==",
+  "dgSpecHash": "5dsvaCMzJonh043CKvS2lIzV/MFhcKh60EKi/4tzJ8RgImrXJ0HM83Z8GbHaHRxCIi2UDZDkOBWPep6DjIu+IA==",
   "success": true,
   "projectFilePath": "C:\\work\\jenkins\\msbuild_project\\ConsoleApp\\ConsoleApp\\ConsoleApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mucahit.celikyay\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.15.1\\microsoft.visualstudio.azure.containers.tools.targets.1.15.1.nupkg.sha512"
+  ],
   "logs": []
 }
